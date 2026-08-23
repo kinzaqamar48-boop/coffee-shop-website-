@@ -1,0 +1,506 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Checkout | Brew & Bean</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Brew<span>&</span>Bean
+    </div>
+
+    <nav>
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html#menu">
+            Menu
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+    <a href="menu.html" class="cart-btn">
+        ☕ Back to Menu
+    </a>
+
+</header>
+
+
+
+<!-- =========================
+     CHECKOUT HERO
+========================= -->
+
+<section class="checkout-hero">
+
+    <p class="small-title">
+        BREW & BEAN
+    </p>
+
+    <h1>
+        Complete Your
+        <span>Order.</span>
+    </h1>
+
+    <p>
+        Just a few details and your favorite coffee
+        will be on its way to you.
+    </p>
+
+</section>
+
+
+
+<!-- =========================
+     CHECKOUT
+========================= -->
+
+<section class="checkout-section">
+
+    <div class="checkout-container">
+
+
+        <!-- =========================
+             CUSTOMER DETAILS
+        ========================== -->
+
+        <div class="checkout-form">
+
+            <div class="checkout-heading">
+
+                <p class="small-title">
+                    DELIVERY DETAILS
+                </p>
+
+                <h2>
+                    Where should we deliver?
+                </h2>
+
+            </div>
+
+
+            <form id="order-form">
+
+
+                <!-- FULL NAME -->
+
+                <div class="input-group">
+
+                    <label for="name">
+                        Full Name
+                    </label>
+
+                    <input
+                        type="text"
+                        id="name"
+                        placeholder="Enter your full name"
+                        required>
+
+                </div>
+
+
+
+                <!-- PHONE + EMAIL -->
+
+                <div class="input-row">
+
+                    <div class="input-group">
+
+                        <label for="phone">
+                            Phone Number
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="phone"
+                            placeholder="+92 300 1234567"
+                            required>
+
+                    </div>
+
+
+                    <div class="input-group">
+
+                        <label for="email">
+                            Email Address
+                        </label>
+
+                        <input
+                            type="email"
+                            id="email"
+                            placeholder="you@example.com"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- ADDRESS -->
+
+                <div class="input-group">
+
+                    <label for="address">
+                        Delivery Address
+                    </label>
+
+                    <textarea
+                        id="address"
+                        rows="4"
+                        placeholder="Enter your complete delivery address"
+                        required></textarea>
+
+                </div>
+
+
+
+                <!-- NOTES -->
+
+                <div class="input-group">
+
+                    <label for="notes">
+
+                        Order Notes
+
+                        <span>
+                            (Optional)
+                        </span>
+
+                    </label>
+
+                    <textarea
+                        id="notes"
+                        rows="3"
+                        placeholder="Any special instructions?"></textarea>
+
+                </div>
+
+
+
+                <!-- =========================
+                     PAYMENT
+                ========================== -->
+
+                <div class="payment-section">
+
+                    <h3>
+                        Payment Method
+                    </h3>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="cod"
+                            checked>
+
+                        <span>
+                            💵 Cash on Delivery
+                        </span>
+
+                    </label>
+
+
+                    <label class="payment-option">
+
+                        <input
+                            type="radio"
+                            name="payment"
+                            value="card">
+
+                        <span>
+                            💳 Credit / Debit Card
+                        </span>
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- PLACE ORDER -->
+
+                <button
+                    type="submit"
+                    class="place-order-btn">
+
+                    Place Order ☕🤎
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =========================
+             ORDER SUMMARY
+        ========================== -->
+
+        <div class="order-summary">
+
+            <div class="summary-header">
+
+                <p class="small-title">
+                    YOUR ORDER
+                </p>
+
+                <h2>
+                    Order Summary
+                </h2>
+
+            </div>
+
+
+            <!-- ITEMS WILL COME FROM CART -->
+
+            <div id="checkout-items">
+
+                <p class="empty-summary">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+
+
+            <!-- SUBTOTAL -->
+
+            <div class="summary-line">
+
+                <span>
+                    Subtotal
+                </span>
+
+                <strong id="checkout-subtotal">
+                    Rs. 0
+                </strong>
+
+            </div>
+
+
+
+            <!-- DELIVERY -->
+
+            <div class="summary-line">
+
+                <span>
+                    Delivery
+                </span>
+
+                <strong id="checkout-delivery">
+                    Rs. 150
+                </strong>
+
+            </div>
+
+
+
+            <!-- TOTAL -->
+
+            <div class="summary-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong id="checkout-total">
+                    Rs. 150
+                </strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <h2>
+                Brew<span>&</span>Bean
+            </h2>
+
+            <p>
+                Crafted coffee, cozy moments
+                and unforgettable flavors.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html#menu">
+                Menu
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- OPENING HOURS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <p>
+                Monday – Friday
+                <br>
+                8:00 AM – 10:00 PM
+            </p>
+
+            <p>
+                Saturday – Sunday
+                <br>
+                9:00 AM – 11:00 PM
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Visit Us
+            </h3>
+
+            <p>
+                📍 Karachi, Pakistan
+            </p>
+
+            <p>
+                📞 +92 300 1234567
+            </p>
+
+            <p>
+                ✉ hello@brewandbean.com
+            </p>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Brew & Bean.
+            All rights reserved.
+        </p>
+
+        <div class="social-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+<!-- =========================
+     JAVASCRIPT
+========================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
+```

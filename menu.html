@@ -1,0 +1,990 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Menu | Brew & Bean</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+========================= -->
+
+<header class="navbar">
+
+    <div class="logo">
+        Brew<span>&</span>Bean
+    </div>
+
+    <nav id="nav-menu">
+
+        <a href="index.html">
+            Home
+        </a>
+
+        <a href="menu.html#menu">
+            Menu
+        </a>
+
+        <a href="about.html">
+            About
+        </a>
+
+        <a href="contact.html">
+            Contact
+        </a>
+
+    </nav>
+
+    <a href="menu.html" class="cart-btn">
+        ☕ Order Now
+    </a>
+
+    <a href="menu.html#cart" class="nav-cart">
+        🛒 Cart
+        <span id="nav-cart-count">0</span>
+    </a>
+
+    <button class="menu-toggle" id="menu-toggle">
+        ☰
+    </button>
+
+</header>
+
+
+
+<!-- =========================
+     MENU HERO
+========================= -->
+
+<section class="menu-hero">
+
+    <div>
+
+        <p class="small-title">
+            OUR COFFEE COLLECTION
+        </p>
+
+        <h1>
+            Choose Your
+            <span>Perfect Coffee.</span>
+        </h1>
+
+        <p>
+            Freshly brewed favorites made with premium
+            coffee beans and served with love.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     CATEGORY + COFFEE MENU
+========================= -->
+
+<section class="menu-section" id="menu">
+
+
+    <div class="category-buttons">
+
+        <button class="category-btn active"
+                onclick="filterMenu('all',this)">
+            All
+        </button>
+
+        <button class="category-btn"
+                onclick="filterMenu('hot',this)">
+            Hot Coffee
+        </button>
+
+        <button class="category-btn"
+                onclick="filterMenu('cold',this)">
+            Cold Coffee
+        </button>
+
+        <button class="category-btn"
+                onclick="filterMenu('special',this)">
+            Specials
+        </button>
+
+    </div>
+
+
+
+    <!-- =========================
+         COFFEE GRID
+    ========================== -->
+
+    <div class="menu-grid">
+
+
+        <!-- Cappuccino -->
+
+        <div class="menu-card"
+             data-category="hot">
+
+            <div class="menu-image">
+
+                <img src="images/cappuccino.jpg"
+                     alt="Cappuccino">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    HOT COFFEE
+                </span>
+
+                <h3>
+                    Cappuccino
+                </h3>
+
+                <p>
+                    Rich espresso topped with
+                    smooth creamy milk foam.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 450
+                    </strong>
+
+                    <button onclick="addToCart('Cappuccino', 450)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Latte -->
+
+        <div class="menu-card"
+             data-category="hot">
+
+            <div class="menu-image">
+
+                <img src="images/latte.jpg"
+                     alt="Café Latte">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    HOT COFFEE
+                </span>
+
+                <h3>
+                    Café Latte
+                </h3>
+
+                <p>
+                    Smooth espresso blended with
+                    creamy steamed milk.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 480
+                    </strong>
+
+                    <button onclick="addToCart('Café Latte', 480)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Mocha -->
+
+        <div class="menu-card"
+             data-category="special">
+
+            <div class="menu-image">
+
+                <img src="images/mocha.jpg"
+                     alt="Chocolate Mocha">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    SPECIAL
+                </span>
+
+                <h3>
+                    Chocolate Mocha
+                </h3>
+
+                <p>
+                    Espresso blended with rich
+                    chocolate and creamy milk.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 520
+                    </strong>
+
+                    <button onclick="addToCart('Chocolate Mocha', 520)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Americano -->
+
+        <div class="menu-card"
+             data-category="hot">
+
+            <div class="menu-image">
+
+                <img src="images/americano.jpg"
+                     alt="Americano">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    HOT COFFEE
+                </span>
+
+                <h3>
+                    Americano
+                </h3>
+
+                <p>
+                    Bold espresso balanced with
+                    hot water.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 400
+                    </strong>
+
+                    <button onclick="addToCart('Americano', 400)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Caramel Macchiato -->
+
+        <div class="menu-card"
+             data-category="special">
+
+            <div class="menu-image">
+
+                <img src="images/caramel-macchiato.jpg"
+                     alt="Caramel Macchiato">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    SPECIAL
+                </span>
+
+                <h3>
+                    Caramel Macchiato
+                </h3>
+
+                <p>
+                    Espresso, creamy milk and
+                    sweet caramel drizzle.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 550
+                    </strong>
+
+                    <button onclick="addToCart('Caramel Macchiato', 550)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Cold Brew -->
+
+        <div class="menu-card"
+             data-category="cold">
+
+            <div class="menu-image">
+
+                <img src="images/cold-brew.jpg"
+                     alt="Cold Brew">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    COLD COFFEE
+                </span>
+
+                <h3>
+                    Cold Brew
+                </h3>
+
+                <p>
+                    Smooth slow-brewed coffee
+                    served chilled.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 500
+                    </strong>
+
+                    <button onclick="addToCart('Cold Brew', 500)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Iced Latte -->
+
+        <div class="menu-card"
+             data-category="cold">
+
+            <div class="menu-image">
+
+                <img src="images/iced-latte.jpg"
+                     alt="Iced Latte">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    COLD COFFEE
+                </span>
+
+                <h3>
+                    Iced Latte
+                </h3>
+
+                <p>
+                    Chilled espresso with creamy
+                    milk and ice.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 490
+                    </strong>
+
+                    <button onclick="addToCart('Iced Latte', 490)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- Espresso -->
+
+        <div class="menu-card"
+             data-category="hot">
+
+            <div class="menu-image">
+
+                <img src="images/expresso.jpg"
+                     alt="Espresso">
+
+            </div>
+
+
+            <div class="menu-info">
+
+                <span class="tag">
+                    HOT COFFEE
+                </span>
+
+                <h3>
+                    Espresso
+                </h3>
+
+                <p>
+                    Strong and rich espresso
+                    with an intense aroma.
+                </p>
+
+
+                <div class="menu-price">
+
+                    <strong>
+                        Rs. 350
+                    </strong>
+
+                    <button onclick="addToCart('Espresso', 350)">
+                        Add +
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     CART SECTION
+========================= -->
+
+<section class="cart-section" id="cart">
+
+    <div class="cart-heading">
+
+        <p class="small-title">
+            YOUR ORDER
+        </p>
+
+        <h2>
+            Your Coffee Cart ☕
+        </h2>
+
+        <p>
+            Review your favorite coffee before checkout.
+        </p>
+
+    </div>
+
+
+    <!-- CART ITEMS -->
+
+    <div class="cart-items" id="cart-items">
+
+        <!-- JavaScript will add cart items here -->
+
+    </div>
+
+
+    <!-- EMPTY CART MESSAGE -->
+
+    <div class="empty-cart-message" id="empty-cart-message">
+
+        <div class="empty-cart-icon">
+        </div>
+
+      
+
+
+
+    <!-- CART SUMMARY -->
+
+    <div class="cart-summary">
+
+        <div class="cart-total">
+
+            <span>
+                Total
+            </span>
+
+            <strong id="cart-total">
+                Rs. 0
+            </strong>
+
+        </div>
+
+
+        <!-- CONTINUE SHOPPING -->
+
+        <a
+            href="#menu"
+            class="continue-shopping-btn">
+
+            ← Continue Shopping
+
+        </a>
+
+
+        <!-- EMPTY CART -->
+
+        <button
+            id="empty-cart-btn"
+            class="empty-cart-btn">
+
+            🗑 Empty Cart
+
+        </button>
+
+
+        <!-- CHECKOUT -->
+
+        <a
+            href="checkout.html"
+            class="checkout-btn">
+
+            Continue to Order ☕
+
+        </a>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     CUSTOMER REVIEWS
+========================= -->
+
+<section class="reviews-section" id="reviews">
+
+    <div class="reviews-heading">
+
+        <p class="small-title">
+            CUSTOMER LOVE
+        </p>
+
+        <h2>
+            What Our Customers Say
+        </h2>
+
+        <p>
+            Good coffee always comes with good memories.
+        </p>
+
+    </div>
+
+
+    <div class="reviews-grid">
+
+
+        <!-- REVIEW 1 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “The coffee was absolutely amazing!
+                Rich, smooth and perfectly prepared.
+                Definitely coming back again.”
+            </p>
+
+            <div class="review-user">
+
+                <div class="user-avatar">
+                    S
+                </div>
+
+                <div>
+
+                    <h3>
+                        Sarah
+                    </h3>
+
+                    <span>
+                        Coffee Lover
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REVIEW 2 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “Beautiful atmosphere, delicious coffee
+                and lovely service. Brew & Bean has
+                become my favorite coffee spot.”
+            </p>
+
+            <div class="review-user">
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <h3>
+                        Ayesha
+                    </h3>
+
+                    <span>
+                        Regular Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- REVIEW 3 -->
+
+        <div class="review-card">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p class="review-text">
+                “I ordered the caramel latte and it was
+                perfect. The ordering process was also
+                super easy.”
+            </p>
+
+            <div class="review-user">
+
+                <div class="user-avatar">
+                    A
+                </div>
+
+                <div>
+
+                    <h3>
+                        Ahmed
+                    </h3>
+
+                    <span>
+                        Happy Customer
+                    </span>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     COFFEE GALLERY
+========================= -->
+
+<section class="gallery-section" id="gallery">
+
+    <div class="gallery-heading">
+
+        <p class="small-title">
+            FROM OUR COFFEE BAR
+        </p>
+
+        <h2>
+            A Little Taste of Brew & Bean
+        </h2>
+
+        <p>
+            Freshly brewed moments, beautiful coffee and cozy vibes.
+        </p>
+
+    </div>
+
+
+    <div class="gallery-grid">
+
+        <div class="gallery-item">
+
+            <img
+                src="images/hero-coffee.jpg"
+                alt="Luxury coffee"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/latte.jpg"
+                alt="Latte coffee"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/cappuccino.jpg"
+                alt="Cappuccino"
+            >
+
+        </div>
+
+
+        <div class="gallery-item">
+
+            <img
+                src="images/coffee-shop.jpg"
+                alt="Coffee shop"
+            >
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+
+
+<!-- =========================
+     FOOTER
+========================= -->
+
+<footer class="footer">
+
+    <div class="footer-container">
+
+
+        <!-- BRAND -->
+
+        <div class="footer-brand">
+
+            <h2>
+                Brew<span>&</span>Bean
+            </h2>
+
+            <p>
+                Crafted coffee, cozy moments
+                and unforgettable flavors.
+            </p>
+
+        </div>
+
+
+
+        <!-- QUICK LINKS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Quick Links
+            </h3>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="menu.html#menu">
+                Menu
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+            <a href="contact.html">
+                Contact
+            </a>
+
+        </div>
+
+
+
+        <!-- OPENING HOURS -->
+
+        <div class="footer-column">
+
+            <h3>
+                Opening Hours
+            </h3>
+
+            <p>
+                Monday – Friday
+                <br>
+                8:00 AM – 10:00 PM
+            </p>
+
+            <p>
+                Saturday – Sunday
+                <br>
+                9:00 AM – 11:00 PM
+            </p>
+
+        </div>
+
+
+
+        <!-- CONTACT -->
+
+        <div class="footer-column">
+
+            <h3>
+                Visit Us
+            </h3>
+
+            <p>
+                📍 Karachi, Pakistan
+            </p>
+
+            <p>
+                📞 +92 300 1234567
+            </p>
+
+            <p>
+                ✉ hello@brewandbean.com
+            </p>
+
+        </div>
+
+
+    </div>
+
+
+
+    <!-- FOOTER BOTTOM -->
+
+    <div class="footer-bottom">
+
+        <p>
+            © 2026 Brew & Bean.
+            All rights reserved.
+        </p>
+
+        <div class="social-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                TikTok
+            </a>
+
+        </div>
+
+    </div>
+
+</footer>
+
+
+
+
+
+<!-- JavaScript -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>
+```
